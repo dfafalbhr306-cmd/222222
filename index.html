@@ -73,7 +73,6 @@
   <div class="section-header">
     <div>
       <h2>فاتورة حساب</h2>
-      <p id="invoiceCompanyName">الشركة: </p>
     </div>
     <div class="quick-actions">
       <button class="primary-btn" id="printInvoiceBtn" style="background:#a61424;"><i class="fa-solid fa-print"></i> طباعة في ورقة واحدة</button>
@@ -81,18 +80,20 @@
       <button class="icon-btn" onclick="document.querySelector('.nav-btn[data-target=\'view-reports\']').click()"><i class="fa-solid fa-arrow-right"></i></button>
     </div>
   </div>
-  <section class="glass panel" id="invoiceArea" style="background: #fff; color: #000; padding: 20px;">
-    <!-- Internal invoice structure styled lightly -->
-    <div style="text-align:center; font-size:1.4rem; font-weight:800; margin-bottom: 20px; color:#000;">م فاتورة حساب</div>
+  <section class="glass panel" id="invoiceArea" style="background: #fff; color: #000; padding: 20px; direction: rtl; font-family: Arial, sans-serif;">
+    <div style="border: 2px solid #000; border-radius: 10px; padding: 10px; margin-bottom: 20px; font-weight: bold; font-size: 1.3rem;">
+      السادة \ <span id="invoiceCompanyNameDisplay"></span>
+    </div>
+    <div style="text-align:center; font-size:1.6rem; font-weight:800; margin-bottom: 20px; color:#000;">م فاتورة حساب</div>
     <div id="invoiceTableContainer" style="overflow-x: auto;"></div>
-    <div style="display:flex; justify-content: space-between; margin-top: 20px; gap: 20px; flex-wrap: wrap;">
-      <div style="flex:1; min-width: 300px;">
-        <table style="width: 100%; border-collapse:collapse; color:#000;">
+    <div style="display:flex; flex-direction: column; align-items: flex-end; margin-top: 20px; gap: 15px;">
+      <div style="width: 50%; min-width: 250px;">
+        <table style="width: 100%; border-collapse:collapse; color:#000; border: 2px solid #000; font-size: 1.1rem;">
           <tbody id="invoiceTotalsHtml"></tbody>
         </table>
       </div>
-      <div style="flex:1; min-width: 300px; display:flex; align-items:flex-end;">
-        <table style="width: 100%; border-collapse:collapse; color:#000;">
+      <div style="width: 50%; min-width: 250px;">
+        <table style="width: 100%; border-collapse:collapse; color:#000; border: 2px solid #000; font-size: 1.1rem;">
           <tbody id="invoiceFinalSums"></tbody>
         </table>
       </div>
@@ -102,5 +103,5 @@
   </main>
   <nav class="bottom-nav glass"><button class="nav-btn active" data-target="view-dashboard"><i class="fa-solid fa-house"></i><span>الرئيسية</span></button><button class="nav-btn" data-target="view-companies"><i class="fa-solid fa-building"></i><span>الشركات</span></button><button class="nav-btn" data-target="view-reports"><i class="fa-solid fa-chart-pie"></i><span>التقارير</span></button><button class="nav-btn" data-target="view-ledger"><i class="fa-solid fa-file-invoice"></i><span>الكشوفات</span></button></nav>
   <div id="toast" class="toast"></div>
-  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script><script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script><script src="script.js"></script>
 </body></html>
